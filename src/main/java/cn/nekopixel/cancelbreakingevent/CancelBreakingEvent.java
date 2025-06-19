@@ -1,10 +1,12 @@
 package cn.nekopixel.cancelbreakingevent;
 
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
-import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.block.BlockDamageEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -22,7 +24,7 @@ public class CancelBreakingEvent extends JavaPlugin implements Listener {
     }
 
     @EventHandler
-    public void onBlockBreak(BlockBreakEvent event) {
+    public void onBlockDamage(BlockDamageEvent event) {
         event.setCancelled(true);
     }
 
@@ -31,11 +33,11 @@ public class CancelBreakingEvent extends JavaPlugin implements Listener {
         event.setCancelled(true);
     }
 
-    @EventHandler
-    public void onPlayerInteract(PlayerInteractEvent event) {
-        Action action = event.getAction();
-        if (action == Action.LEFT_CLICK_BLOCK || action == Action.LEFT_CLICK_AIR) {
-            event.setCancelled(true);
-        }
-    }
+//    @EventHandler
+//    public void onPlayerInteract(PlayerInteractEvent event) {
+//        Action action = event.getAction();
+//        if (action == Action.LEFT_CLICK_BLOCK || action == Action.LEFT_CLICK_AIR) {
+//            event.setCancelled(true);
+//        }
+//    }
 }
