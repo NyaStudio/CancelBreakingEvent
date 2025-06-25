@@ -1,4 +1,4 @@
 name: CancelBreakingEvent
-version: 1.0
+version: 1.0.2
 main: cn.nekopixel.cancelbreakingevent.CancelBreakingEvent
 description: Cancels all block break and place actions
